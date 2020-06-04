@@ -19,3 +19,6 @@ data class Note(@Id @GeneratedValue var id: Long? = null,
                 var title: String? = null,
                 var text: String? = null,
                 @JsonIgnore var user: String? = null)
+
+@RepositoryRestResource
+interface NotesRepository : JpaRepository<Note, Long>
