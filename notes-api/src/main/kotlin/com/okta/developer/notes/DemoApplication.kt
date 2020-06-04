@@ -8,6 +8,10 @@ import javax.persistence.GeneratedValue
 import javax.persistence.Id
 import org.springframework.data.jpa.repository.JpaRepository
 import org.springframework.data.rest.core.annotation.RepositoryRestResource
+import org.springframework.data.rest.core.annotation.HandleBeforeCreate
+import org.springframework.data.rest.core.annotation.RepositoryEventHandler
+import org.springframework.security.core.context.SecurityContextHolder
+import org.springframework.stereotype.Component
 
 @SpringBootApplication
 class DemoApplication
