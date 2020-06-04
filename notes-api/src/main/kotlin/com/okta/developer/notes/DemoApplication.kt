@@ -24,3 +24,15 @@ data class Note(@Id @GeneratedValue var id: Long? = null,
 
 @RepositoryRestResource
 interface NotesRepository : JpaRepository<Note, Long>
+
+@Component
+@RepositoryEventHandler(Note::class)
+class AddUserToNote {
+
+    @HandleBeforeCreate
+    fun handleCreate(note: Note) {
+        val username: String =  SecurityContextHolder.getContext().getAuthentication().name
+        println("Creating note: $note with user: $username")
+        note.user = username
+    }
+}
