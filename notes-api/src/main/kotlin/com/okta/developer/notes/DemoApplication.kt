@@ -6,6 +6,8 @@ import org.springframework.boot.runApplication
 import javax.persistence.Entity
 import javax.persistence.GeneratedValue
 import javax.persistence.Id
+import org.springframework.data.jpa.repository.JpaRepository
+import org.springframework.data.rest.core.annotation.RepositoryRestResource
 
 @SpringBootApplication
 class DemoApplication
